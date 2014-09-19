@@ -23,8 +23,8 @@ This project assignment involved getting the average value for the mean and stan
 
 The task of getting average values of each feature measurement for a specific subject-activity pair involved the following steps:
 
-Step 1> Combining the training set and the test set to form one large dataset.(xtrain + xtest)
-------
+Step 1. Combining the training set and the test set to form one large dataset.(xtrain + xtest)
+
 
     merged data= xtrain + xtest
 
@@ -36,8 +36,8 @@ Step 1> Combining the training set and the test set to form one large dataset.(x
     ------------------
 
 
-Step 2> Selecting only the required columns after naming the columns based on the feaure.txt
--------
+Step 2. Selecting only the required columns after naming the columns based on the feaure.txt
+
 
 
     subset(merged data)=66 columns selected out of (Xtrain + Xtest)
@@ -52,9 +52,9 @@ Step 2> Selecting only the required columns after naming the columns based on th
     --------------
 
 
-Step 3> Combining the subject and activity data to the merged data set.
-------
-    ________________________________
+Step 3. Combining the subject and activity data to the merged data set.
+
+    --------------------------------
     |Feature info|Subject |Activity|
     --------------------------------
     |            |        |        |
@@ -66,11 +66,11 @@ Step 3> Combining the subject and activity data to the merged data set.
     
 
    
-Step 4> Naming the activity labels appropriately to indicate the action like walking, standing etc.
-------
+Step 4. Naming the activity labels appropriately to indicate the action like walking, standing etc.
 
-Step 5> Grouping based on the subject and activity and getting the average values of each of the feature.
--------
+
+Step 5. Grouping based on the subject and activity and getting the average values of each of the feature.
+
 
 
 
@@ -78,7 +78,7 @@ Step 5> Grouping based on the subject and activity and getting the average value
    | Subject|Activity|Feature1 avg| Feature2Avg|...|Feature 66 avg|
    ---------------------------------------------------------------
    | 1      |STANDING|   xxxx     |    yyyy    |   |              |  
-   | :      |        |            |            |   |              |
+   | 2      |SITTING |   xxxx     |    yyyy    |   |              |
    |        |        |            |            |   |              |
    |        |        |            |            |   |              |
    ----------------------------------------------------------------

@@ -2,8 +2,8 @@ README file for the project of Getting and cleaning data
 =========================================================
 
 This repo link contains the following
-1. R script run_analysis.R
-2. Code book which gives details of all the variables in the tidy data (final data after running the R script)
+ 1. R script run_analysis.R
+ 2. Code book which gives details of all the variables in the tidy data (final data after running the R script)
 
 R script details:
 ------------------
@@ -22,7 +22,7 @@ Assumptions made by the R script
 provided in the project assignment assignment instructions. That is the data needs to be downloaded from the following link and unzipped 
 using any suitable method
 
-        https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+        [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip]
 
    The script is run from the working directory where the UCI HAR Dataset folder is accessible.
 
