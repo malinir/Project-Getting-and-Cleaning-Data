@@ -75,8 +75,8 @@ Step 5. Grouping based on the subject and activity and getting the average value
    ----------------------------------------------------------------
    | Subject|Activity|Feature1 avg| Feature2Avg|   |Feature 66 avg|
    ---------------------------------------------------------------
-   | 1      |STANDING|   Value1   |    value2  |   |              |  
-   | 2      |SITTING |   value3   |    value4  |   |              |
+   | sub1   |STANDING|   Value1   |    value2  |   |              |  
+   | sub2   |SITTING |   value3   |    value4  |   |              |
    |        |        |            |            |   |              |
    |        |        |            |            |   |              |
    ----------------------------------------------------------------
