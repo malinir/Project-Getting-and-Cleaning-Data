@@ -1,4 +1,3 @@
-Code Book.md
 
 Data set for Human activity recognition using smartphones
 ==========================================================
@@ -71,11 +70,8 @@ Step 4. Naming the activity labels appropriately to indicate the action like wal
 
 Step 5. Grouping based on the subject and activity and getting the average values of each of the feature.
 
-
-
-
    ----------------------------------------------------------------
-   | Subject|Activity|Feature1 avg| Feature2Avg|...|Feature 66 avg|
+   | Subject|Activity|Feature1 avg| Feature2Avg|   |Feature 66 avg|
    ---------------------------------------------------------------
    | 1      |STANDING|   xxxx     |    yyyy    |   |              |  
    | 2      |SITTING |   xxxx     |    yyyy    |   |              |
