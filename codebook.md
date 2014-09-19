@@ -68,13 +68,15 @@ Step 3. Combining the subject and activity data to the merged data set.
 Step 4. Naming the activity labels appropriately to indicate the action like walking, standing etc.
 
 
+
 Step 5. Grouping based on the subject and activity and getting the average values of each of the feature.
+
 
    ----------------------------------------------------------------
    | Subject|Activity|Feature1 avg| Feature2Avg|   |Feature 66 avg|
    ---------------------------------------------------------------
-   | 1      |STANDING|   xxxx     |    yyyy    |   |              |  
-   | 2      |SITTING |   xxxx     |    yyyy    |   |              |
+   | 1      |STANDING|   Value1   |    value2  |   |              |  
+   | 2      |SITTING |   value3   |    value4  |   |              |
    |        |        |            |            |   |              |
    |        |        |            |            |   |              |
    ----------------------------------------------------------------
@@ -180,9 +182,10 @@ Given below are all the variables (68 columns with Subject and Activity) that ar
 Explanation of the variables:
 -----------------------------
 
-Subject: Identification of each of the subject. Ranging from 1 to 30.
-Activity: Identification of the activity that each of the subject performed. Values are WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
-Avg-tBodyAcc-mean()-X: For a subject-activity pair, average value of the mean time domain body acceleration signal from the X plane.
+1. Subject: Identification of each of the subject. Ranging from 1 to 30.
+2. Activity: Identification of the activity that each of the subject performed. Values are WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+3. Avg-tBodyAcc-mean()-X: For a subject-activity pair, average value of the mean time domain body acceleration signal from the X plane.
 
-The details of each of the measurement is provided above in the feature selection section. 
+The details of all other variables can be explained based on the explanation for the Avg-tBodyAcc-mean()-X variable. Details of each of the measurement is
+ provided above in the feature selection section. 
  
