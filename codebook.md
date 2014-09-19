@@ -21,6 +21,9 @@ This project assignment involved getting the average value for the mean and stan
 
 
 The task of getting average values of each feature measurement for a specific subject-activity pair involved the following steps:
+The idea for the diagrams below have been picked from the following discussion forum thread
+   [https://class.coursera.org/getdata-007/forum/thread?thread_id=49]
+
 
 Step 1. Combining the training set and the test set to form one large dataset.(xtrain + xtest)
 
@@ -72,14 +75,14 @@ Step 4. Naming the activity labels appropriately to indicate the action like wal
 Step 5. Grouping based on the subject and activity and getting the average values of each of the feature.
 
 
-   ----------------------------------------------------------------
-   | Subject|Activity|Feature1 avg| Feature2Avg|   |Feature 66 avg|
-   ---------------------------------------------------------------
-   | sub1   |STANDING|   Value1   |    value2  |   |              |  
-   | sub2   |SITTING |   value3   |    value4  |   |              |
-   |        |        |            |            |   |              |
-   |        |        |            |            |   |              |
-   ----------------------------------------------------------------
+   ------------------------------------------------------------
+   | Subject|Activity|Feature1 avg| Feature2Avg|Feature 66 avg|
+   ------------------------------------------------------------
+   | sub1   |STANDING|   Value1   |    value2  |              |  
+   | sub2   |SITTING |   value3   |    value4  |              |
+   |        |        |            |            |              |
+   |        |        |            |            |              |
+   ------------------------------------------------------------
 
 
 
