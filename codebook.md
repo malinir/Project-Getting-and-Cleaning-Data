@@ -30,13 +30,11 @@ Step 1. Combining the training set and the test set to form one large dataset.(x
 
     merged data= xtrain + xtest
 
-    ------------------
-    |                |
-    |   Xtrain       |
-    ------------------
-    |   Xtest        |
-    ------------------
+| xtrain                   |
+|--------------------------|
+| xtest                    |
 
+    
 
 Step 2. Selecting only the required columns after naming the columns based on the feaure.txt. 
         The feature names were read into a vector and the merged data set was named based on the values of the vector.
@@ -46,31 +44,29 @@ Step 2. Selecting only the required columns after naming the columns based on th
 
     subset(merged data)=66 columns selected out of (Xtrain + Xtest)
 
-    --------------                ----------------------
-    |Feature info|               |Feature info          |
-    --------------                ----------------------
-    |            |               | Merged data of test  |
-    |   Xtrain   |   ========>   | and training         |
-    --------------               |                      |    
-    |   Xtest    |               ------------------------
-    --------------
+  
+| Feature info             |
+|--------------------------|
+| xtrain                   |
+| xtest                    |
+
+
+   |
+   v
+
+| Feature info                        |
+|-------------------------------------|
+| Merged set of training and test set |
 
 
 Step 3. Combining the subject and activity data to the merged data set.
+
+| Feature info                        | Subject Activity       | Activity                |
+|-------------------------------------|------------------------|-------------------------|
+| Merged set of training and test set | merged data of subject | merged data of activity |
         
 
-    --------------------------------
-    |Feature info|Subject |Activity|
-    --------------------------------
-    |            |        |        |
-    |   Merged   |subtrain|acttrain|
-    -------------------------------|
-    |   Data     |subtest |acttest |
-    --------------------------------
-
-    
-
-   
+       
 Step 4. Naming the activity labels appropriately to indicate the action like walking, standing etc.
         A vector with the activity names was used to read in and fill all the relevant details.
 
