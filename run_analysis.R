@@ -61,20 +61,21 @@
 ## Doing this just to reorder the columns to show the Subject and Activity first
  mergdatanew<- select(mergdatanew,Subject,Activity,contains("mean"),contains("std"))
 
-## Step 5
+## Step 4 and 5 of the project
+## Naming the column variables to remove the () and -
+## There may be more elegant ways of doing this, but at this point in time,
+## I am sticking to this method 
 ## Grouping by the subject and activity and calculating the mean of each 
-## of the variables
+## of the variables 
 ## Using the chaining function and using the summarise_each
+ 
+ names(mergdatanew)<- gsub("fBody","AvgfBody",names(mergdatanew))
+ names(mergdatanew)<- gsub("tGravity","AvgtGravity",names(mergdatanew))
+ names(mergdatanew)<- gsub("tBody","AvgtBody",names(mergdatanew))
+ names(mergdatanew)<- gsub("-","",names(mergdatanew))
+ names(mergdatanew)<- gsub("\\()","",names(mergdatanew))
+ 
  tidydata<-mergdatanew%>%group_by(Subject,Activity)%>%summarise_each(funs(mean))
- 
-## Time to change the column names of feature variables to indicate that it is
-## average value of a particular feature measurement
-## May be other better methods to do this, but at this point in time sticking
-## to this approach
- 
- names(tidydata)<- gsub("fBody","Avg-fBody",names(tidydata))
- names(tidydata)<- gsub("tGravity","Avg-tGravity",names(tidydata))
- names(tidydata)<- gsub("tBody","Avg-tBody",names(tidydata))
  
  print(tidydata)
 

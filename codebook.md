@@ -14,18 +14,18 @@ low-pass filter into body acceleration and gravity. The gravitational force is a
 cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. 
 
 
-The raw data available at the following link had 561 features the readings for which were stored in the X files. (Xtrain and Xtest).
-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip.
+The raw data available at the following link had 561 features the readings for which were stored in the X files. (Xtrain and Xtest). 
+[https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip.]
+
 This project assignment involved getting the average value for the mean and standard deviation measurements for each of the subject per activity.
-
-
 
 The task of getting average values of each feature measurement for a specific subject-activity pair involved the following steps:
 The idea for the diagrams below have been picked from the following discussion forum thread
    [https://class.coursera.org/getdata-007/forum/thread?thread_id=49]
 
 
-Step 1. Combining the training set and the test set to form one large dataset.(xtrain + xtest)
+Step 1. Combining the training set and the test set to form one large dataset.(xtrain + xtest). 
+        A simple row binding was done on the training and test sets to get the merged set. This set does not include the activity and subject.
 
 
     merged data= xtrain + xtest
@@ -38,7 +38,9 @@ Step 1. Combining the training set and the test set to form one large dataset.(x
     ------------------
 
 
-Step 2. Selecting only the required columns after naming the columns based on the feaure.txt
+Step 2. Selecting only the required columns after naming the columns based on the feaure.txt. 
+        The feature names were read into a vector and the merged data set was named based on the values of the vector.
+        A subset of this data was taken based on the column name containing a mean or a std (standard deviation).
 
 
 
@@ -55,6 +57,7 @@ Step 2. Selecting only the required columns after naming the columns based on th
 
 
 Step 3. Combining the subject and activity data to the merged data set.
+        
 
     --------------------------------
     |Feature info|Subject |Activity|
@@ -69,18 +72,24 @@ Step 3. Combining the subject and activity data to the merged data set.
 
    
 Step 4. Naming the activity labels appropriately to indicate the action like walking, standing etc.
+        A vector with the activity names was used to read in and fill all the relevant details.
+
+Step 5. Naming the column variables suitably. As part of this step, the following were done
+        1. Remove the ()
+        2. Remove the -
+        3. All the variables were prefixed with Avg to indicate average since it represents the average value for a subject activity pair.
+     Note: The variable names were not changed to lower case since changing everything to lower case reduced the readability. 
 
 
 
-Step 5. Grouping based on the subject and activity and getting the average values of each of the feature.
+Step 6. Grouping based on the subject and activity and getting the average values of each of the feature.
 
 
    ------------------------------------------------------------
-   | Subject|Activity|Feature1 avg| Feature2Avg|Feature 66 avg|
+   | Subject|Activity|Feature1 avg| Feature2avg|Feature 66 avg|
    ------------------------------------------------------------
    | sub1   |STANDING|   Value1   |    value2  |              |  
    | sub2   |SITTING |   value3   |    value4  |              |
-   |        |        |            |            |              |
    |        |        |            |            |              |
    ------------------------------------------------------------
 
@@ -88,8 +97,8 @@ Step 5. Grouping based on the subject and activity and getting the average value
 
 Feature Selection 
 ------------------
-
-The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. 
+The database refers to the original dataset that was provided for the project. 
+The features selected for the database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. 
 These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. 
 Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. 
 Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using 
@@ -105,7 +114,8 @@ These signals were used to estimate variables of the feature vector for each pat
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
 Out of all the 561 variables available, only 66 variables have been selected as required by the project assignment. These 66 variables are the mean and 
-standard deviation. The angle related and mean frequency related variables have been left out from the raw dataset.
+standard deviation. The angle related and mean frequency related variables have been left out from the raw dataset. 
+The variables were renamed to exclude special characters like () and - and an "Avg" to indicate average has been prefixed.
 
 Variables for this project
 --------------------------
@@ -113,82 +123,84 @@ Variables for this project
 Given below are all the variables (68 columns with Subject and Activity) that are present in the final data set. The subject and activity together form the key.
 
 
- 1.    Subject
- 2.    Activity 
- 3.    Avg-tBodyAcc-mean()-X
- 4.    Avg-tBodyAcc-mean()-Y 
- 5.    Avg-tBodyAcc-mean()-Z 
- 6.    Avg-tGravityAcc-mean()-X 
- 7.    Avg-tGravityAcc-mean()-Y 
- 8.    Avg-tGravityAcc-mean()-Z 
- 9.    Avg-tBodyAccJerk-mean()-X 
- 10.   Avg-tBodyAccJerk-mean()-Y 
- 11.   Avg-tBodyAccJerk-mean()-Z 
- 12.   Avg-tBodyGyro-mean()-X 
- 13.   Avg-tBodyGyro-mean()-Y 
- 14.   Avg-tBodyGyro-mean()-Z 
- 15.   Avg-tBodyGyroJerk-mean()-X 
- 16.   Avg-tBodyGyroJerk-mean()-Y 
- 17.   Avg-tBodyGyroJerk-mean()-Z 
- 18.   Avg-tBodyAccMag-mean() 
- 19.   Avg-tGravityAccMag-mean() 
- 20.   Avg-tBodyAccJerkMag-mean() 
- 21.   Avg-tBodyGyroMag-mean() 
- 22.   Avg-tBodyGyroJerkMag-mean() 
- 23.   Avg-fBodyAcc-mean()-X 
- 24.   Avg-fBodyAcc-mean()-Y 
- 25.   Avg-fBodyAcc-mean()-Z 
- 26.   Avg-fBodyAccJerk-mean()-X 
- 27.   Avg-fBodyAccJerk-mean()-Y 
- 28.   Avg-fBodyAccJerk-mean()-Z 
- 29.   Avg-fBodyGyro-mean()-X 
- 30.   Avg-fBodyGyro-mean()-Y 
- 31.   Avg-fBodyGyro-mean()-Z 
- 32.   Avg-fBodyAccMag-mean() 
- 33.   Avg-fBodyBodyAccJerkMag-mean() 
- 34.   Avg-fBodyBodyGyroMag-mean() 
- 35.   Avg-fBodyBodyGyroJerkMag-mean() 
- 36.   Avg-tBodyAcc-std()-X 
- 37.   Avg-tBodyAcc-std()-Y 
- 38.   Avg-tBodyAcc-std()-Z 
- 39.   Avg-tGravityAcc-std()-X 
- 40.   Avg-tGravityAcc-std()-Y 
- 41.   Avg-tGravityAcc-std()-Z 
- 42.   Avg-tBodyAccJerk-std()-X 
- 43.   Avg-tBodyAccJerk-std()-Y 
- 44.   Avg-tBodyAccJerk-std()-Z 
- 45.   Avg-tBodyGyro-std()-X 
- 46.   Avg-tBodyGyro-std()-Y 
- 47.   Avg-tBodyGyro-std()-Z 
- 48.   Avg-tBodyGyroJerk-std()-X 
- 49.   Avg-tBodyGyroJerk-std()-Y 
- 50.   Avg-tBodyGyroJerk-std()-Z 
- 51.   Avg-tBodyAccMag-std() 
- 52.   Avg-tGravityAccMag-std() 
- 53.   Avg-tBodyAccJerkMag-std() 
- 54.   Avg-tBodyGyroMag-std() 
- 55.   Avg-tBodyGyroJerkMag-std() 
- 56.   Avg-fBodyAcc-std()-X 
- 57.   Avg-fBodyAcc-std()-Y 
- 58.   Avg-fBodyAcc-std()-Z 
- 59.   Avg-fBodyAccJerk-std()-X 
- 60.   Avg-fBodyAccJerk-std()-Y 
- 61.   Avg-fBodyAccJerk-std()-Z 
- 62.   Avg-fBodyGyro-std()-X 
- 63.   Avg-fBodyGyro-std()-Y 
- 64.   Avg-fBodyGyro-std()-Z 
- 65.   Avg-fBodyAccMag-std() 
- 66.   Avg-fBodyBodyAccJerkMag-std() 
- 67.   Avg-fBodyBodyGyroMag-std() 
- 68.   Avg-fBodyBodyGyroJerkMag-std() 
+ 1.	Subject
+ 2.	Activity
+ 3.	AvgtBodyAccmeanX
+ 4.	AvgtBodyAccmeanY
+ 5.	AvgtBodyAccmeanZ
+ 6.	AvgtGravityAccmeanX
+ 7.	AvgtGravityAccmeanY
+ 8.	AvgtGravityAccmeanZ
+ 9.	AvgtBodyAccJerkmeanX
+ 10.	AvgtBodyAccJerkmeanY
+ 11.	AvgtBodyAccJerkmeanZ
+ 12.	AvgtBodyGyromeanX
+ 13.	AvgtBodyGyromeanY
+ 14.	AvgtBodyGyromeanZ
+ 15.	AvgtBodyGyroJerkmeanX
+ 16.	AvgtBodyGyroJerkmeanY
+ 17.	AvgtBodyGyroJerkmeanZ
+ 16.	AvgtBodyAccMagmean
+ 17.	AvgtGravityAccMagmean
+ 18.	AvgtBodyAccJerkMagmean
+ 19.	AvgtBodyGyroMagmean
+ 20.	AvgtBodyGyroJerkMagmean
+ 21.	AvgfBodyAccmeanX
+ 22.	AvgfBodyAccmeanY
+ 23.	AvgfBodyAccmeanZ
+ 24.	AvgfBodyAccJerkmeanX
+ 25.	AvgfBodyAccJerkmeanY
+ 26.	AvgfBodyAccJerkmeanZ
+ 27.	AvgfBodyGyromeanX
+ 28.	AvgfBodyGyromeanY
+ 29.	AvgfBodyGyromeanZ
+ 30.	AvgfBodyAccMagmean
+ 31.	AvgfBodyBodyAccJerkMagmean
+ 32.	AvgfBodyBodyGyroMagmean
+ 33.	AvgfBodyBodyGyroJerkMagmean
+ 34.	AvgtBodyAccstdX
+ 35.	AvgtBodyAccstdY
+ 36.	AvgtBodyAccstdZ
+ 37.	AvgtGravityAccstdX
+ 38.	AvgtGravityAccstdY
+ 39.	AvgtGravityAccstdZ
+ 40.	AvgtBodyAccJerkstdX
+ 41.	AvgtBodyAccJerkstdY
+ 42.	AvgtBodyAccJerkstdZ
+ 43.	AvgtBodyGyrostdX
+ 44.	AvgtBodyGyrostdY
+ 45.	AvgtBodyGyrostdZ
+ 46.	AvgtBodyGyroJerkstdX
+ 47.	AvgtBodyGyroJerkstdY
+ 48.	AvgtBodyGyroJerkstdZ
+ 49.	AvgtBodyAccMagstd
+ 50.	AvgtGravityAccMagstd
+ 51.	AvgtBodyAccJerkMagstd
+ 52.	AvgtBodyGyroMagstd
+ 53.	AvgtBodyGyroJerkMagstd
+ 54.	AvgfBodyAccstdX
+ 55.	AvgfBodyAccstdY
+ 56.	AvgfBodyAccstdZ
+ 59.	AvgfBodyAccJerkstdX
+ 60.	AvgfBodyAccJerkstdY
+ 61.	AvgfBodyAccJerkstdZ
+ 62.	AvgfBodyGyrostdX
+ 63.	AvgfBodyGyrostdY
+ 64.	AvgfBodyGyrostdZ
+ 65.	AvgfBodyAccMagstd
+ 66.	AvgfBodyBodyAccJerkMagstd
+ 67.	AvgfBodyBodyGyroMagstd
+ 68.	AvgfBodyBodyGyroJerkMagstd
 
 Explanation of the variables:
 -----------------------------
 
 1. Subject: Identification of each of the subject. Ranging from 1 to 30.
 2. Activity: Identification of the activity that each of the subject performed. Values are WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
-3. Avg-tBodyAcc-mean()-X: For a subject-activity pair, average value of the mean time domain body acceleration signal from the X plane.
+3. AvgtBodyAccmeanX: For a subject-activity pair, average value of the mean time domain body acceleration signal from the X plane.
+4. AvgtGravityAccstdY:For a subject-activity pair, average value of standard deviations for the gravitational component of the accelaration signal in the Y plane.
+5. AvgfBodyAccJerkmeanZ: For a subject-activity pair, average value of means of the jerk signals in the frequency domain measured along the Z plane.
 
-The details of all other variables can be explained based on the explanation for the Avg-tBodyAcc-mean()-X variable. Details of each of the measurement is
- provided above in the feature selection section. 
+The details of all other variables can be explained based on the explanation for the above variables. Details of each of the measurement is provided above in the 
+feature selection section. 
  
