@@ -84,14 +84,13 @@ Step 5. Naming the column variables suitably. As part of this step, the followin
 
 Step 6. Grouping based on the subject and activity and getting the average values of each of the feature.
 
+| subject | Activity | Feature1 avg | Feature2 avg | Feature 66 Avg |
+|---------|----------|--------------|--------------|----------------|
+| 1       | Walking  | xxx          | yyy          | zzz            |
+| 2       | Standing | aaa          | bbb          | ccc            |
+|         |          |              |              |                |
 
-   ------------------------------------------------------------
-   | Subject|Activity|Feature1 avg| Feature2avg|Feature 66 avg|
-   ------------------------------------------------------------
-   | sub1   |STANDING|   Value1   |    value2  |              |  
-   | sub2   |SITTING |   value3   |    value4  |              |
-   |        |        |            |            |              |
-   ------------------------------------------------------------
+
 
 
 
