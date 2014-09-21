@@ -27,7 +27,10 @@ using any suitable method
    The script is run from the working directory where the UCI HAR Dataset folder is accessible.
 
 2. The dplyr package and its dependants are installed and available.
-       -----
+   Hence if dplyr has not already been installed, use the following and install it and make it available for R.
+
+       >install.packages("dplyr")
+       >library(dplyr)
 
 How to reconstruct the data frame from the output txt file uploaded in the assignment
 --------------------------------------------------------------------------------------
